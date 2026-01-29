@@ -1,0 +1,38 @@
+---
+
+name: complete devops project pieline
+
+on:
+  push:
+    branches:
+      - mains
+
+jobs:
+  build and push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set Short SHA
+        run: |
+          echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -c1-7)" >> $GITHUB_ENV
+
+      - name: build docker image
+        run: |
+          docker build -t lumanex/complete-devops-project:${{ env.SHORT_SHA }} .
+
+      - name: Log in to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Push to Docker Hub
+        run: |
+          docker push lumanex/complete-devops-project:${{ env.SHORT_SHA }}
+
+
+      
+
+      -
+
+    
