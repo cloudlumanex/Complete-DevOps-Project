@@ -1,0 +1,19 @@
+---
+ApiVersion: argoproj.io/v1alpha1  
+Kind: Application
+Metadata:
+  Name: complete-devops-project
+  Namespace: argocd
+Spec:
+  Project: default
+  Source:
+    RepoURL: 'https://github.com/cloudlumanex/Complete-DevOps-Project'
+    TargetRevision: HEAD
+    path: Complete-DevOps-Project
+  Destination:
+    Server: 'https://kubernetes.default.svc'
+    Namespace: default
+  SyncPolicy:
+    Automated:
+      Prune: true
+      SelfHeal: true

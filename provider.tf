@@ -1,3 +1,4 @@
+
 provider "kubernetes" {
   # Configuration options
   host = minikube_cluster.minikube_docker.host
@@ -6,4 +7,11 @@ provider "kubernetes" {
     cluster_ca_certificate = minikube_cluster.minikube_docker.cluster_ca_certificate
 
 
+}
+
+
+provider "helm" {
+  kubernetes = {
+    config_path = "~/.kube/config"
+  }
 }
