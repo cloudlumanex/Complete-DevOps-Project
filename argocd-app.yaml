@@ -10,6 +10,10 @@ spec:
     repoURL: "https://github.com/cloudlumanex/Complete-DevOps-Project"
     targetRevision: main
     path: complete-devops-project-time-printer
+    helm:
+      values: |
+        httpRoute:
+          enabled: false
 
   destination:
     server: https://kubernetes.default.svc
