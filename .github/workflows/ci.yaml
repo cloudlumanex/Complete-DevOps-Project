@@ -33,7 +33,7 @@ jobs:
       - name: Configure Git
         run: |
           git config --local user.name "Cloulumanex"
-          git config --local user.email "techlumanex@gmail.com
+          git config --local user.email "techlumanex@gmail.com"
 
       - name: Update Helm chart image tag
         run: |
