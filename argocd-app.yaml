@@ -1,4 +1,3 @@
----
 ApiVersion: argoproj.io/v1alpha1  
 Kind: Application
 Metadata:
