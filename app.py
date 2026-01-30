@@ -1,11 +1,15 @@
 from flask import Flask
 from datetime import datetime
+import pytz
 
 app = Flask(__name__)
 
 @app.route('/')
 def get_current_time():
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # Set timezone to GMT+1 (West Africa Time - Nigeria)
+    nigeria_tz = pytz.timezone('Africa/Lagos')
+    current_time = datetime.now(nigeria_tz).strftime("%Y-%m-%d %H:%M:%S")
+    
     return f"""
     <!DOCTYPE html>
     <html>
@@ -31,6 +35,11 @@ def get_current_time():
             }}
             h1 {{
                 color: #333;
+                margin-bottom: 10px;
+            }}
+            .timezone {{
+                color: #666;
+                font-size: 0.9em;
                 margin-bottom: 20px;
             }}
             .time {{
@@ -57,7 +66,8 @@ def get_current_time():
     </head>
     <body>
         <div class="container">
-            <h1>Current Time</h1>
+            <h1>Current Time in Nigeria</h1>
+            <div class="timezone">West Africa Time (GMT+1)</div>
             <div class="time">{current_time}</div>
             <div class="nav">
                 <a href="javascript:location.reload()">Refresh</a>
@@ -168,7 +178,7 @@ def about():
             <h1>👋 About Me</h1>
             
             <div class="intro">
-                <p>Hello! I'm <span class="highlight">Emmanuel Ulu</span>, a passionate DevOps Engineer based in Lagos, Nigeria 🇳🇬</p>
+                <p>Hello! I'm <span class="highlight">Lumanex</span>, a passionate DevOps Engineer based in Lagos, Nigeria 🇳🇬</p>
             </div>
 
             <div class="section">
