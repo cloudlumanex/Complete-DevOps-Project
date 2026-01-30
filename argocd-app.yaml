@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/cloudlumanex/Complete-DevOps-Project.git
     targetRevision: HEAD
-    path: terraform-configs/complete-devops-project-time-printer
+    path: complete-devops-project-time-printer
 
   destination:
     server: https://kubernetes.default.svc
