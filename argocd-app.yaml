@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: "https://github.com/cloudlumanex/Complete-DevOps-Project"
-    targetRevision: HEAD
+    targetRevision: main
     path: complete-devops-project-time-printer
 
   destination:
