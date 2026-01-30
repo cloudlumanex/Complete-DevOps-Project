@@ -10,7 +10,7 @@ def get_current_time():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Current Time</title>
+        <title>Current Time in Nigeria</title>
         <style>
             body {{
                 font-family: Arial, sans-serif;
