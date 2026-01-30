@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/cloudlumanex/Complete-DevOps-Project.git
+    repoURL: "https://github.com/cloudlumanex/Complete-DevOps-Project"
     targetRevision: HEAD
     path: complete-devops-project-time-printer
 
