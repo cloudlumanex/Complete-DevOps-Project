@@ -1,7 +1,7 @@
 ---
 image:
   repository: lumanex/complete-devops-project
-  tag: 483cd8c
+  tag: 97350da
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
